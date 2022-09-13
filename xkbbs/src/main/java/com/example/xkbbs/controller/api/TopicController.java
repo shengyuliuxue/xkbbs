@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class TopicController {
     @PostMapping("/create")
     public String create(Topic topic){
-        return topic.getTitle() + " ------" + topic.getContent();
+        return topic.getTitle() + " $$$$$$" + topic.getContent();
     }
 }

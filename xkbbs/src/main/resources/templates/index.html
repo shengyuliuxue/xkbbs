@@ -15,8 +15,8 @@
   #toolbar-container { border-bottom: 1px solid #ccc; }
   #editor-container { height: 500px; }
 </style>
-
 </head>
+
 <body>
 <div>发布帖子</div>
 <div>
@@ -28,7 +28,7 @@
 </div >
 
 <div>
-    <button type="button" id="btn" onclick="submitpost()">提交</button>
+    <button type="button" id="btn"  onclick="submitpost()">提交</button>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/wangeditor@latest/dist/wangEditor.min.js"></script>
@@ -39,7 +39,6 @@
 
     //提交帖子
     function submitpost(){
-     $('#btn').one("click" , function(){
      $.ajax({
             type : "post",
             dataType: "json",
@@ -48,17 +47,15 @@
                 "title": $("#title").val(),
                 "content" : editor.txt.html()
                 },
-            success: function(rexsult){
+            success: function(result){
                 console.log("成功");
             },
              error: function(result){
                     console.log("异常");
             }
      });
-     return false;           //禁止默认提交行为
-   });
-    //$('#btn').off("click");
-    }
+     //return false;           //禁止默认提交行为
+   }
 
 </script>
 </body>
